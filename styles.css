@@ -1,0 +1,189 @@
+/* Estilo general */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Corazones flotantes */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff6f91;
+  opacity: 0.8;
+  transform: rotate(45deg);
+  border-radius: 50% 50% 0 0;
+  animation: float 5s infinite ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff6f91;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+.heart:nth-child(1) {
+  left: 20%;
+  animation-duration: 4s;
+  animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+  left: 40%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+  left: 60%;
+  animation-duration: 5s;
+  animation-delay: 2s;
+}
+
+.heart:nth-child(4) {
+  left: 80%;
+  animation-duration: 7s;
+  animation-delay: 3s;
+}
+
+.heart:nth-child(5) {
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 4s;
+}
+
+/* Animación de los corazones */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Pregunta */
+.question {
+  text-align: center;
+  z-index: 1;
+}
+
+.question p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#yes-button {
+  background: #ff6f91;
+  color: #fff;
+}
+
+#yes-button:hover {
+  background: #d6476d;
+}
+
+#no-button {
+  background: #ccc;
+  color: #333;
+  position: absolute;
+}
+
+#no-button:hover {
+  background: #aaa;
+}
+
+/* Carta */
+.letter {
+  width: 320px;
+  max-width: 90%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  animation: fadeIn 0.5s ease;
+}
+
+.letter p {
+  margin: 10px 0;
+}
+
+.letter .greeting {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.letter .message {
+  margin: 20px 0;
+}
+
+.letter .signature {
+  font-weight: bold;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
