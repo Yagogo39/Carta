@@ -111,8 +111,9 @@ body {
 
 .buttons {
   display: flex;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;  /* Esto asegura que haya espacio entre los botones */
+  margin-top: 20px;  /* Agrega un poco de margen arriba */
 }
 
 button {
@@ -136,7 +137,6 @@ button {
 #no-button {
   background: #ccc;
   color: #333;
-  position: absolute;
 }
 
 #no-button:hover {
@@ -186,4 +186,3 @@ button {
     transform: scale(1);
   }
 }
-
