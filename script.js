@@ -16,3 +16,4 @@ document.getElementById('yes-button').addEventListener('click', function() {
   document.querySelector('.letter').style.display = 'block';
   document.querySelector('.question').style.display = 'none';
 });
+
